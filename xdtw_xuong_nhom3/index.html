@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPT Polytechnic</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Utility Classes */
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-1 {
+            margin-bottom: 10px;
+        }
+
+        .mb-2 {
+            margin-bottom: 20px;
+        }
+
+        .mb-3 {
+            margin-bottom: 30px;
+        }
+
+        .mt-2 {
+            margin-top: 20px;
+        }
+
+        .mt-3 {
+            margin-top: 30px;
+        }
+
+        .py-1 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .py-2 {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .py-3 {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .py-4 {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .py-5 {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #ff6600;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #e55c00;
+        }
+
+        .btn-outline {
+            border: 2px solid #ff6600;
+            color: #ff6600;
+            background-color: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: #ff6600;
+            color: #fff;
+        }
+
+        .btn-white {
+            background-color: #fff;
+            color: #ff6600;
+        }
+
+        .btn-white:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #0a1e3c;
+            color: #fff;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        /* Header */
+        .header {
+            background-color: #0a2d62;
+            color: #fff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 200px;
+            height: 100px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            float: left;
+            font-size: 13px;
+        }
+
+        .nav-menu a:hover {
+            color: #ff6600;
+        }
+
+        /* Banner */
+        .banner {
+            width: 100%;
+            display: block;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: #f5f5f5;
+            padding: 50px 0;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #0a2d62;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Programs Section */
+        .programs {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            color: #0a2d62;
+        }
+
+        .card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .bg-blue {
+            background: linear-gradient(to right, #3498db, #2980b9);
+        }
+
+        .bg-green {
+            background: linear-gradient(to right, #2ecc71, #27ae60);
+        }
+
+        .bg-orange {
+            background: linear-gradient(to right, #f39c12, #e67e22);
+        }
+
+        .bg-purple {
+            background: linear-gradient(to right, #9b59b6, #8e44ad);
+        }
+
+        .bg-red {
+            background: linear-gradient(to right, #e74c3c, #c0392b);
+        }
+
+        .bg-navy {
+            background: linear-gradient(to right, #34495e, #2c3e50);
+        }
+
+        /* News Section */
+        .news {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+
+        .news-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s;
+        }
+
+        .card:hover .news-image img {
+            transform: scale(1.05);
+        }
+
+        .news-date {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .news-title {
+            font-weight: 600;
+            font-size: 18px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-title:hover {
+            color: #0a2d62;
+        }
+
+        .news-excerpt {
+            font-size: 14px;
+            color: #666;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-link {
+            font-size: 14px;
+            font-weight: 500;
+            color: #ff6600;
+        }
+
+        .news-link:hover {
+            text-decoration: underline;
+        }
+
+        /* CTA Banner */
+        .cta {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .cta-desc {
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        /* Partners Section */
+        .partners {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .partners-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+            max-width: 120px;
+        }
+
+        .partner-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #0a1e3c;
+            color: #fff;
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+
+        .footer-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+        }
+
+        .facebook {
+            background-color: #3b5998;
+        }
+
+        .twitter {
+            background-color: #1da1f2;
+        }
+
+        .youtube {
+            background-color: #ff0000;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ff6600;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu,
+            .header .btn {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="flex justify-between items-center">
+                <div>
+                    <a href="#">contact@polytechnic.edu.vn</a>
+                    <span style="margin: 0 10px;">|</span>
+                    <a href="#">+84 123 456 789</a>
+                </div>
+                <div>
+                    <a href="#">Log In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="flex justify-between items-center">
+                <a href="#" class="logo">
+                    <img width="182" height="64" class="default_logo2 entered lazyloaded"
+                        src="https://caodang.fpt.edu.vn/wp-content/uploads/logo-3.png" alt="logo"
+                        style="height:55px;max-height:86.4px;"
+                        data-lazy-src="https://caodang.fpt.edu.vn/wp-content/uploads/logo-3.png"
+                        data-ll-status="loaded">
+                </a>
+                <nav class="nav-menu">
+                    <a href="#"><i class="bi bi-house-gear-fill"> </i>GIỚI THIỆU CHUNG <i class="bi bi-arrow-down"></i></a>
+                    <a href="#">TUYỂN SINH <i class="bi bi-arrow-down"></i></a>
+                    <a href="#">CHƯỞNG TRÌNH ĐÀO TẠO <i class="bi bi-arrow-down"></i></a>
+                    <a href="#">HOẠT ĐỘNG SV <i class="bi bi-arrow-down"></i></a>
+                    <a href="#">TIM HỌC BỔNG</a>
+                    <a href="#">THI TN THPT</a>
+                    <a href="#">TUYỂN DỤNG <i class="bi bi-arrow-down"></i></a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <img width="1900" height="750"
+        src="https://caodang.fpt.edu.vn/wp-content/uploads/2025/02/z6319588842204_8bd7eb4eca8cfee6ddb899fa1c357cce.jpg"
+        alt="Slider item"
+        data-lazy-src="https://caodang.fpt.edu.vn/wp-content/uploads/2025/02/z6319588842204_8bd7eb4eca8cfee6ddb899fa1c357cce.jpg"
+        data-ll-status="loaded" class="entered lazyloaded">
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="grid grid-4">
+                <div class="stat-item">
+                    <img width="110" height="110" src="https://caodang.fpt.edu.vn/wp-content/uploads/icon-1-110x110.png"
+                        alt="" style="width:55px;"
+                        data-lazy-src="https://caodang.fpt.edu.vn/wp-content/uploads/icon-1-110x110.png"
+                        data-ll-status="loaded" class="entered lazyloaded">
+                    <p class="stat-number">97.7%</p>
+                    <p class="stat-label">Tỷ lệ sinh viên có việc làm</p>
+                </div>
+                <div class="stat-item">
+                    <img width="110" height="110" src="https://caodang.fpt.edu.vn/wp-content/uploads/icon-2-110x110.png"
+                        alt="" style="width:55px;"
+                        data-lazy-src="https://caodang.fpt.edu.vn/wp-content/uploads/icon-2-110x110.png"
+                        data-ll-status="loaded" class="entered lazyloaded">
+                    <p class="stat-number">2,000+</p>
+                    <p class="stat-label">Doanh nghiệp đối tác</p>
+                </div>
+                <div class="stat-item">
+                    <img width="110" height="110" src="https://caodang.fpt.edu.vn/wp-content/uploads/icon-3-110x110.png"
+                        alt="" style="width:55px;"
+                        data-lazy-src="https://caodang.fpt.edu.vn/wp-content/uploads/icon-3-110x110.png"
+                        data-ll-status="loaded" class="entered lazyloaded">
+                    <p class="stat-number">40,000+</p>
+                    <p class="stat-label">Sinh viên đã tốt nghiệp</p>
+                </div>
+                <div class="stat-item">
+                    <img width="110" height="110" src="https://caodang.fpt.edu.vn/wp-content/uploads/icon-4-110x110.png"
+                        alt="" style="width:55px;"
+                        data-lazy-src="https://caodang.fpt.edu.vn/wp-content/uploads/icon-4-110x110.png"
+                        data-ll-status="loaded" class="entered lazyloaded">
+                    <p class="stat-number">11</p>
+                    <p class="stat-label">Cơ sở đào tạo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs">
+        <div class="container">
+            <h2 class="section-title">NGÀNH ĐÀO TẠO</h2>
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-icon bg-blue">
+                        <span>&#128187;</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Công nghệ thông tin</h3>
+                        <p class="card-desc">Đào tạo chuyên sâu về lập trình, phát triển phần mềm và quản trị hệ thống
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon bg-green">
+                        <span>&#128200;</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Quản trị kinh doanh</h3>
+                        <p class="card-desc">Đào tạo kỹ năng quản lý, marketing và phát triển doanh nghiệp</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon bg-orange">
+                        <span>&#127912;</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Thiết kế đồ họa</h3>
+                        <p class="card-desc">Đào tạo kỹ năng thiết kế, sáng tạo nội dung và xây dựng thương hiệu</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon bg-purple">
+                        <span>&#127976;</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Du lịch và khách sạn</h3>
+                        <p class="card-desc">Đào tạo kỹ năng quản lý khách sạn, du lịch và dịch vụ khách hàng</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon bg-red">
+                        <span>&#128172;</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Ngôn ngữ</h3>
+                        <p class="card-desc">Đào tạo kỹ năng ngôn ngữ, biên phiên dịch và giao tiếp quốc tế</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon bg-navy">
+                        <span>&#128202;</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Kế toán tài chính</h3>
+                        <p class="card-desc">Đào tạo kỹ năng kế toán, tài chính và quản lý ngân sách</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news">
+        <div class="container">
+            <h2 class="section-title">TIN MỚI NHẤT</h2>
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="news-image">
+                        <img src="Pic1.png" alt="News 1">
+                    </div>
+                    <div class="card-content">
+                        <p class="news-date mb-1">15 Tháng 3, 2025</p>
+                        <h3 class="news-title mb-2">
+                            <a href="/news/1">Trải nghiệm của sinh viên FPT Polytechnic với Thực tập tại các doanh
+                                nghiệp</a>
+                        </h3>
+                        <p class="news-excerpt mb-2">
+                            Sinh viên FPT Polytechnic chia sẻ những kinh nghiệm quý báu và bài học thực tế
+                            từ chương trình thực tập tại các doanh nghiệp hàng đầu...
+                        </p>
+                        <a href="/news/1" class="news-link">Xem thêm</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="news-image">
+                        <img src="pic2.jpg" alt="News 2">
+                    </div>
+                    <div class="card-content">
+                        <p class="news-date mb-1">10 Tháng 3, 2025</p>
+                        <h3 class="news-title mb-2">
+                            <a href="/news/2">Nguyễn Thị Trang và hành trình vươn tới mơi ước thực hiện Dự án Quốc
+                                tế</a>
+                        </h3>
+                        <p class="news-excerpt mb-2">
+                            Câu chuyện truyền cảm hứng từ nữ sinh viên ngành Du lịch & Khách sạn đã vượt qua
+                            nhiều thử thách để đạt được ước mơ làm việc tại...
+                        </p>
+                        <a href="/news/2" class="news-link">Xem thêm</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="news-image">
+                        <img src="Pic3.jpg" alt="News 3">
+                    </div>
+                    <div class="card-content">
+                        <p class="news-date mb-1">5 Tháng 3, 2025</p>
+                        <h3 class="news-title mb-2">
+                            <a href="/news/3">FPT Polytechnic ký kết hợp tác với 50 doanh nghiệp công nghệ mới</a>
+                        </h3>
+                        <p class="news-excerpt mb-2">
+                            Lễ ký kết hợp tác đánh dấu bước tiến quan trọng trong việc mở rộng cơ hội thực tập
+                            và việc làm cho sinh viên CNTT và Thiết kế...
+                        </p>
+                        <a href="/news/3" class="news-link">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <a href="/news" class="btn btn-outline">Xem tất cả tin tức</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title mb-2">CHÍNH THỨC MỞ ĐỢT TUYỂN SINH THÁNG 5</h2>
+            <p class="cta-desc">
+                Đăng ký ngay hôm nay để nhận ưu đãi học phí và cơ hội việc làm sau tốt nghiệp
+            </p>
+            <a href="/register" class="btn btn-white">Đăng ký ngay</a>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <h2 class="section-title text-center">ĐỐI TÁC</h2>
+            <div class="partners-grid">
+                <img src="https://placehold.co/120x60/cccccc/666666?text=Partner+1" alt="Partner 1"
+                    class="partner-logo">
+                <img src="https://placehold.co/120x60/cccccc/666666?text=Partner+2" alt="Partner 2"
+                    class="partner-logo">
+                <img src="https://placehold.co/120x60/cccccc/666666?text=Partner+3" alt="Partner 3"
+                    class="partner-logo">
+                <img src="https://placehold.co/120x60/cccccc/666666?text=Partner+4" alt="Partner 4"
+                    class="partner-logo">
+                <img src="https://placehold.co/120x60/cccccc/666666?text=Partner+5" alt="Partner 5"
+                    class="partner-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h3 class="footer-title">HỆ THỐNG ĐÀO TẠO POLYTECHNIC</h3>
+                    <p class="footer-text mb-2">
+                        Đào tạo thực hành chuyên sâu với phương châm "Thực học - Thực nghiệp"
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link facebook">F</a>
+                        <a href="#" class="social-link twitter">T</a>
+                        <a href="#" class="social-link youtube">Y</a>
+                    </div>
+                    <div>
+                        <br>
+                        <h3 class="footer-title">THÔNG TIN LIÊN HỆ</h3>
+                        <ul class="footer-links">
+                            <li>(024) 7300 1955</li>
+                            <li>caodang@fpt.edu.vn</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">CHƯƠNG TRÌNH ĐÀO TẠO</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Công nghệ thông tin</a></li>
+                        <li><a href="#">Thiết kế đồ họa</a></li>
+                        <li><a href="#">Quản trị kinh doanh</a></li>
+                        <li><a href="#">Du lịch & Khách sạn</a></li>
+                        <li><a href="#">Kế toán doanh nghiệp</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">VĂN PHÒNG TUYỂN SINH</h3>
+                    <ul class="footer-links">
+                        <h3>Cơ sở Hà Nội</h3>
+                        <p>🏠 Số 1, tòa nhà FPT Polytechnic, 13 phố Trịnh Văn Bô, Phương Canh, Nam Từ Liêm</p>
+                        <p>🏠 Km 17 Cầu Diễn, Phúc Diễn, Bắc Từ Liêm</p>
+                        <p>📞 (024) 8582 0808</p>
+                        <h3>Cơ sở Thái Nguyên</h3>
+                        <p>🏠 Tòa nhà FPT Polytechnic, Quyết Thắng, TP Thái Nguyên</p>
+                        <p>📞 091 532 9213</p>
+                        <h3>Cơ sở Hải Phòng</h3>
+                        <p>🏠 271 Lê Thánh Tông, Máy Chai, Ngô Quyền</p>
+                        <p>📞 0915431313</p>                      
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title"></h3>
+                    <br>
+                    <ul class="footer-links">
+                        <h3>Cơ sở Hồ Chí Minh</h3>
+                        <p>🏠 Tòa nhà QTSC9, Tô Ký, Tân Chánh Hiệp, Quận 12</p>
+                        <p>🏠 778/B1 Nguyễn Kiệm, Phường 4, Phú Nhuận</p>
+                        <p>📞 028 660 002 – 028 6606 6186</p>
+                        <h3>Cơ sở Đà Nẵng</h3>
+                        <p>🏠 219 Nguyễn Sinh Sắc, phường Hòa Minh, quận Liên Chiểu, TP Đà Nẵng</p>
+                        <p>📞 0236 371 0599 – 054 302 5982</p>
+                        <h3>Cơ sở Cần Thơ</h3>
+                        <p>🏠 Tòa nhà FPT Polytechnic, đường số 22, phường Thường Thạnh, quận Cái Răng, TP Cần Thơ</p>
+                        <p>📞 098 388 1100</p>                      
+                    </ul>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 FPT Polytechnic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
