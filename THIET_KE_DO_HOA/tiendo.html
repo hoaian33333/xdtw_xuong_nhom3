@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPT Polytechnic</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="index2.css">
+    <style>
+       .tab-container {
+            margin-top: 20px;
+        }
+        .tab {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+        }
+        .tab li {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            background: white;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .tab li:first-child {
+            border-left: 1px solid #ddd;
+        }
+        .tab li a {
+            color: #003366;
+            text-decoration: none;
+        }
+        .tab li:hover {
+            background: #ff6600;
+        }
+        .tab li:hover a {
+            color: white;
+        }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+th {
+    background-color: #ff6600;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Định dạng chữ trong bảng */
+td span {
+    font-weight: bold;
+    color: #ff6600;
+}
+@media (max-width: 992px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Chuyển tất cả grid về 1 cột trên điện thoại */
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu.show {
+                display: block;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="flex justify-between items-center">
+                <div>
+                    <a href="#"><i class="bi bi-envelope-arrow-down-fill"></i> contact@polytechnic.edu.vn</a>
+                    <span style="margin: 0 10px;">|</span>
+                    <a href="#"><i class="bi bi-telephone-fill"></i> +84 123 456 789</a>
+                </div>
+                <div>
+                    <a href="#">Liên Hệ <i class="bi bi-search"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="flex justify-between items-center">
+                <a href="#" class="logo">
+                    <img width="182" height="64" class="default_logo2 entered lazyloaded"
+                        src="https://caodang.fpt.edu.vn/wp-content/uploads/logo-3.png" alt="logo"
+                        style="height:55px;max-height:86.4px;"
+                        data-lazy-src="https://caodang.fpt.edu.vn/wp-content/uploads/logo-3.png"
+                        data-ll-status="loaded">
+                </a>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html"><i class="bi bi-house"></i></a></li>
+                        <li class="sub-menu">
+                            <a href="#">GIỚI THIỆU CHUNG<i class="bi bi-caret-down-fill"></i></a>
+                            <div class="submenu-content">
+                                <a href="#">Về FPT Education</a>
+                                <a href="#">Trường CĐ FPT Polytechnic</a>
+                                <a href="#">Gắn kết cộng đồng</a>
+                            </div>
+                        </li>
+                        <li class="sub-menu">
+                            <a href="#">TUYỂN SINH<i class="bi bi-caret-down-fill"></i></a>
+                            <div class="submenu-content">
+                                <a href="#">Thông tin tuyển sinh</a>
+                                <a href="#">Học phí & Học bổng</a>
+                                <a href="#">Lịch khai giảng</a>
+                                <a href="#">Hướng dẫn nhập học</a>
+                            </div>
+                        </li>
+                        <li class="sub-menu">
+                            <a href="#">CHƯƠNG TRÌNH ĐÀO TẠO<i class="bi bi-caret-down-fill"></i></a>
+                            <div class="submenu-content">
+                                <a href="#">Công nghệ thông tin</a>
+                                <a href="#">Thiết kế đồ họa</a>
+                                <a href="#">Quản trị kinh doanh</a>
+                                <a href="#">Du lịch & Khách sạn</a>
+                                <a href="#">Kế toán doanh nghiệp</a>
+                            </div>
+                        </li>
+                        <li class="sub-menu">
+                            <a href="#">HOẠT ĐỘNG SV<i class="bi bi-caret-down-fill"></i></a>
+                            <div class="submenu-content">
+                                <a href="#">Câu lạc bộ sinh viên</a>
+                                <a href="#">Sự kiện & Hội thảo</a>
+                                <a href="#">Cuộc thi học thuật</a>
+                            </div>
+                        </li>
+                        <li><a href="#">TIN HỌC BỔNG</a></li>
+                        <li><a href="#">THI TN THPT</a></li>
+                        <li class="sub-menu">
+                            <a href="#">TUYỂN DỤNG<i class="bi bi-caret-down-fill"></i></a>
+                            <div class="submenu-content">
+                                <a href="#">Vị trí tuyển dụng</a>
+                                <a href="#">Quy trình ứng tuyển</a>
+                                <a href="#">Môi trường làm việc</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <img width="1900" height="750"
+        src="https://caodang.fpt.edu.vn/wp-content/uploads/2025/02/z6319588842204_8bd7eb4eca8cfee6ddb899fa1c357cce.jpg"
+        alt="Slider item"
+        data-lazy-src="https://caodang.fpt.edu.vn/wp-content/uploads/2025/02/z6319588842204_8bd7eb4eca8cfee6ddb899fa1c357cce.jpg"
+        data-ll-status="loaded" class="entered lazyloaded">
+
+    <!-- Stats Section -->
+    <main>
+        <header class="entry-header"><h1 class="entry-title">THIẾT KẾ ĐỒ HỌA</h1></header>
+
+        <img width="1200" height="628" src="https://caodang.fpt.edu.vn/wp-content/uploads/TKĐH-1.png" class="attachment-full size-full wp-post-image entered lazyloaded" alt="" decoding="async" fetchpriority="high" data-lazy-srcset="https://caodang.fpt.edu.vn/wp-content/uploads/TKĐH-1.png 1200w, https://caodang.fpt.edu.vn/wp-content/uploads/TKĐH-1-314x164.png 314w, https://caodang.fpt.edu.vn/wp-content/uploads/TKĐH-1-768x402.png 768w, https://caodang.fpt.edu.vn/wp-content/uploads/TKĐH-1-500x262.png 500w" data-lazy-sizes="(max-width: 1200px) 100vw, 1200px" data-lazy-src="https://caodang.fpt.edu.vn/wp-content/uploads/TKĐH-1.png" data-ll-status="loaded" sizes="(max-width: 1200px) 100vw, 1200px" srcset="https://caodang.fpt.edu.vn/wp-content/uploads/TKĐH-1.png 1200w, https://caodang.fpt.edu.vn/wp-content/uploads/TKĐH-1-314x164.png 314w, https://caodang.fpt.edu.vn/wp-content/uploads/TKĐH-1-768x402.png 768w, https://caodang.fpt.edu.vn/wp-content/uploads/TKĐH-1-500x262.png 500w">
+            
+        <div class="tab-container">
+            <ul class="tab">
+                <li><a href="noidung.html">Nội dung</a></li>
+                <li><a href="tiendo.html">Tiến độ đào tạo</a></li>
+                <li><a href="doituong.html">Đối tượng, hình thức TS</a></li>
+                <li><a href="thoigian.html">Thời gian đào tạo</a></li>
+                <li><a href="hocphi.html">Học phí</a></li>
+                <li><a href="diadiem.html">Địa điểm đào tạo</a></li>
+            </ul>
+        </div> 
+        <br>
+        <h1>TIẾN ĐỘ ĐÀO TẠO</h1><br>  
+        <p><strong>Ngành: Thiết kế đồ hoạ<br>
+            Chuyên ngành hẹp 1 (CN1): Thiết kế nội và ngoại thất<br>
+            Chuyên ngành hẹp 2 (CN2): Dựng phim và quảng cáo
+        </strong></p>
+
+        <table style="border-collapse: collapse;width: 100%">
+            <tbody>
+            <tr>
+            <td style="width: 50%"><span style="color: #ff6600"><strong>Học kỳ 1</strong></span><br>
+            Kỹ năng học tập<br>
+            Tin học<br>
+            Nhập môn đồ hoạ<br>
+            Thiết kế hình ảnh với Photoshop<br>
+            Tiếng Anh 1.1<br>
+            Giáo dục thể chất - Vovinam (*)</td>
+            <td style="width: 50%"><span style="color: #ff6600"><strong>Học kỳ 2</strong></span><br>
+            Luật xa gần &amp; bố cục trong TKĐH<br>
+            Màu sắc<br>
+            Thiết kế minh hoạ với Illustrator<br>
+            Chế bản điện tử với InDesign<br>
+            Tiếng Anh 1.2<br>
+            Chính trị (*)</td>
+            </tr>
+            <tr>
+            <td style="width: 50%"><span style="color: #ff6600"><strong>Học kỳ 3</strong></span><br>
+            Nghệ thuật chữ<br>
+            Thiết kế bao bì<br>
+            Thiết kế thương hiệu và Marketing<br>
+            Dự án 1<br>
+            Kỹ năng phát triển bản thân<br>
+            Tiếng Anh 2.1</td>
+            <td style="width: 50%"><span style="color: #ff6600"><strong>Học kỳ 4</strong></span><br>
+            Kỹ thuật nhiếp ảnh<br>
+            Ý tưởng sáng tạo<br>
+            CN1:<br>
+            -AutoCAD 2D<br>
+            -Nguyên ký thiết kế nội thất 1<br>
+            CN2:<br>
+            -Kịch bản phim quảng cáo<br>
+            -Dựng hình với Maya 3D<br>
+            Tự chọn 1 trong 2 môn học:<br>
+            -Kỹ thuật in<br>
+            -Thiết kế đa truyền thông với Animate<br>
+            Tiếng Anh 2.2</td>
+            </tr>
+            <tr>
+            <td style="width: 50%"><span style="color: #ff6600"><strong>Học kỳ 5</strong></span><br>
+            CN 1:<br>
+            - Nguyên lý Thiết kế nội thất 2<br>
+            - Dựng phối cảnh với SketchUp<br>
+            - Thiết kế phối cảnh nội thất với 3D Max<br>
+            - Xử lý hậu kỳ với Adobe Premiere<br>
+            CN 2:<br>
+            -Quay &amp; Dựng phim với Adobe Premiere<br>
+            -Hiệu ứng kỹ xảo với Adobe After Effect<br>
+            -Dựng hình với C4D<br>
+            -Chuyển động với C4D<br>
+            Kỹ năng làm việc<br>
+            Khởi sự doanh nghiệp (*)</td>
+            <td style="width: 50%"><span style="color: #ff6600"><strong>Học kỳ 6</strong></span><br>
+            Thực tập tốt nghiệp<br>
+            Dự án tốt nghiệp<br>
+            Pháp luật (*)<br>
+            Giáo dục quốc phòng (*)</td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <p style="text-align: justify"><em>(*) Các môn học này có thể triển khai ở bất cứ học kỳ nào theo sắp xếp của Ban Đào tạo Trường Cao đẳng FPT Polytechnic.</em></p>
+
+
+    </main>
+    <!-- Comment Section -->
+    <section class="comment-section">
+        <div class="comment-header">
+            <h2>0 bình luận</h2>
+            <div class="sort-options">
+                <span>Sắp xếp theo</span>
+                <button>Mới nhất <span class="plus-icon">+</span></button>
+            </div>
+        </div>
+        <div class="comment-input">
+            <input type="text" placeholder="Bình luận...">
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h3 class="footer-title">HỆ THỐNG ĐÀO TẠO POLYTECHNIC</h3>
+                    <p class="footer-text mb-2">
+                        Đào tạo thực hành chuyên sâu với phương châm "Thực học - Thực nghiệp"
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link facebook">F</a>
+                        <a href="#" class="social-link tiktok">T</a>
+                        <a href="#" class="social-link youtube">Y</a>
+                    </div>
+                    <div>
+                        <br>
+                        <h3 class="footer-title">THÔNG TIN LIÊN HỆ</h3>
+                        <ul class="footer-links">
+                            <li>(024) 7300 1955</li>
+                            <li>caodang@fpt.edu.vn</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="footer-title">CHƯƠNG TRÌNH ĐÀO TẠO</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Công nghệ thông tin</a></li>
+                        <li><a href="#">Thiết kế đồ họa</a></li>
+                        <li><a href="#">Quản trị kinh doanh</a></li>
+                        <li><a href="#">Du lịch & Khách sạn</a></li>
+                        <li><a href="#">Kế toán doanh nghiệp</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">VĂN PHÒNG TUYỂN SINH</h3>
+                    <ul class="footer-links">
+                        <h3>Cơ sở Hà Nội</h3>
+                        <p>🏠 Số 1, tòa nhà FPT Polytechnic, 13 phố Trịnh Văn Bô, Phương Canh, Nam Từ Liêm</p>
+                        <p>🏠 Km 17 Cầu Diễn, Phúc Diễn, Bắc Từ Liêm</p>
+                        <p>📞 (024) 8582 0808</p>
+                        <h3>Cơ sở Thái Nguyên</h3>
+                        <p>🏠 Tòa nhà FPT Polytechnic, Quyết Thắng, TP Thái Nguyên</p>
+                        <p>📞 091 532 9213</p>
+                        <h3>Cơ sở Hải Phòng</h3>
+                        <p>🏠 271 Lê Thánh Tông, Máy Chai, Ngô Quyền</p>
+                        <p>📞 0915431313</p>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title"></h3>
+                    <br>
+                    <ul class="footer-links">
+                        <h3>Cơ sở Hồ Chí Minh</h3>
+                        <p>🏠 Tòa nhà QTSC9, Tô Ký, Tân Chánh Hiệp, Quận 12</p>
+                        <p>🏠 778/B1 Nguyễn Kiệm, Phường 4, Phú Nhuận</p>
+                        <p>📞 028 660 002 – 028 6606 6186</p>
+                        <h3>Cơ sở Đà Nẵng</h3>
+                        <p>🏠 219 Nguyễn Sinh Sắc, phường Hòa Minh, quận Liên Chiểu, TP Đà Nẵng</p>
+                        <p>📞 0236 371 0599 – 054 302 5982</p>
+                        <h3>Cơ sở Cần Thơ</h3>
+                        <p>🏠 Tòa nhà FPT Polytechnic, đường số 22, phường Thường Thạnh, quận Cái Răng, TP Cần Thơ</p>
+                        <p>📞 098 388 1100</p>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 FPT Polytechnic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
