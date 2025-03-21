@@ -1,0 +1,639 @@
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Utility Classes */
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-1 {
+            margin-bottom: 10px;
+        }
+
+        .mb-2 {
+            margin-bottom: 20px;
+        }
+
+        .mb-3 {
+            margin-bottom: 30px;
+        }
+
+        .mt-2 {
+            margin-top: 20px;
+        }
+
+        .mt-3 {
+            margin-top: 30px;
+        }
+
+        .py-1 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .py-2 {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .py-3 {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .py-4 {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .py-5 {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #ff6600;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #e55c00;
+        }
+
+        .btn-outline {
+            border: 2px solid #ff6600;
+            color: #ff6600;
+            background-color: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: #ff6600;
+            color: #ffffff;
+        }
+
+        .btn-white {
+            background-color: #fff;
+            color: #ff6600;
+        }
+
+        .btn-white:hover {
+            background-color: #b9b9b9;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #0a1e3c;
+            color: #fff;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar a:hover {
+            color: #ff6600;
+        }
+
+        /* Header */
+        .header {
+            background-color: #0a2d62;
+            color: #fff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 200px;
+            height: 100px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            float: left;
+            font-size: 13px;
+        }
+        .nav-menu ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-menu li {
+            position: relative;
+        }
+        
+        .nav-menu li a {
+            display: block;
+            padding: 15px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 10px;
+            text-align: left;
+        }
+        
+        .nav-menu a:hover {
+            color: #ff6600;
+        }
+        
+
+        .submenu-content {
+            position: relative;
+        }
+
+        .submenu-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 250px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1000;
+            border-radius: 4px;
+        }
+
+        .submenu-content a {
+            color: #333 !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .submenu-content a:hover {
+            background-color: rgba(128, 128, 128, 0.312);
+            text-decoration: underline ;
+        }
+        .sub-menu:hover .submenu-content {
+            display: block;
+        }
+        
+
+        /* Banner */
+        .banner {
+            width: 100%;
+            display: block;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: #f5f5f5;
+            padding: 50px 0;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #0a2d62;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Programs Section */
+        .programs {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #0a2d62;
+        }
+
+        .card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+
+        .card-content {
+            display: block;
+            padding: 20px;
+            height: 100%;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* News Section */
+        .news {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+
+        .news-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s;
+        }
+
+        .news-date {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .news-title {
+            font-weight: 600;
+            font-size: 18px;
+            overflow: hidden;
+        }
+
+        .news-title:hover {
+            color: #0a2d62;
+        }
+
+        .news-excerpt {
+            font-size: 14px;
+            color: #666;
+            overflow: hidden;
+        }
+
+        .news-link {
+            padding-top: 50px;
+            padding-bottom: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #ff6600;
+            height: 100%;
+
+        }
+
+        .news-link:hover {
+            text-decoration: underline;
+        }
+
+        /* CTA Banner */
+        .cta {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .cta-desc {
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        /* Partners Section */
+        .partners {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .partners-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .partner-logo {
+            opacity: 0.7;
+            transition: all 0.3s;
+            max-width: 120px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #0a1e3c;
+            color: #fff;
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+
+        .footer-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .facebook {
+            background-color: #3b5998;
+        }
+
+        .tiktok {
+            background-color: #1da1f2;
+        }
+
+        .youtube {
+            background-color: #ff0000;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: #ff6600;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f4f4f4;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 800px; /* Giới hạn chiều rộng nội dung */
+            margin: 20px auto; /* Căn giữa */
+            padding: 20px;
+            background-color: white; /* Nền trắng */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+        }
+        
+        main h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333; /* Màu chữ tiêu đề */
+        }
+        
+        main p {
+            font-size: 16px;
+            line-height: 1.6; /* Khoảng cách dòng */
+            margin-bottom: 15px;
+            color: #555; /* Màu chữ đoạn văn */
+        }
+        
+        .social-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px; /* Khoảng cách giữa các nút */
+        }
+        
+        .social-buttons button {
+            background-color: #ddd; /* Màu nền nút */
+            border: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px; /* Bo góc */
+        }
+        
+        .social-buttons button:hover {
+            background-color: #ccc; /* Hiệu ứng khi hover */
+        }
+        
+        .social-buttons button:nth-child(1) {
+            background-color: #3b5998; /* Màu xanh của nút Chia sẻ (giống Facebook) */
+            color: white;
+        }
+        
+        .social-buttons button:nth-child(2) {
+            background-color: #ff6200; /* Màu cam của nút Thích */
+            color: white;
+        }
+        .comment-section {
+            max-width: 800px; /* Giới hạn chiều rộng */
+            margin: 20px auto; /* Căn giữa */
+            padding: 20px;
+            background-color: white; /* Nền trắng */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+        }
+        
+        /* Comment Header */
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .comment-header h2 {
+            font-size: 18px;
+            color: #333;
+        }
+        
+        .sort-options {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Khoảng cách giữa các phần tử */
+        }
+        
+        .sort-options span {
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .sort-options button {
+            background: none;
+            border: none;
+            font-size: 14px;
+            color: #555;
+            cursor: pointer;
+        }
+        
+        .sort-options .plus-icon {
+            color: #888;
+        }
+        
+        /* Comment Input */
+        .comment-input {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Khoảng cách giữa avatar và ô nhập */
+        }
+        
+        .comment-input input {
+            flex: 1; /* Chiếm toàn bộ không gian còn lại */
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px; /* Bo góc */
+            font-size: 14px;
+            outline: none; /* Bỏ viền khi focus */
+        }
+        
+        .comment-input input::placeholder {
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu,
+            .header .btn {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+        }
